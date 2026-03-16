@@ -1,0 +1,18 @@
+.main-content {
+    flex: auto;
+}
+
+.main-content1{
+    flex: auto;
+}
+
+.bottles-table-body {
+    background-color: #f9f9f9;
+}
+
+.suppliers-table-body {
+    width: 100%;
+    border-collapse: collapse;
+    flex: auto;
+    font-size: 14px;
+}

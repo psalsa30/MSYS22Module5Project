@@ -11,21 +11,23 @@
       <thead>
         <tr>
           <th>#</th>
-          <th>Bottle Name</th>
+          <th>SKU</th>
+          <th>Brand</th>
           <th>Capacity (mL)</th>
           <th>Price</th>
-          <th>Stock</th>
+          <th>Color</th>
           <th>Supplier</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class = "bottles-table-body">
         {% for bottle in bottles %}
         <tr>
           <td>{{ forloop.counter }}</td>
+          <td>{{ bottle.sku }}</td>
           <td>{{ bottle.brand }}</td>
           <td>{{ bottle.size }}</td>
-          <td>{{ bottle.cost }}</td>
-          <td>{{ bottle.current_quantity }}</td>
+          <td>PHP {{ bottle.cost }}</td>
+          <td>{{ bottle.color }}</td>
           <td>{{ bottle.supplied_by }}</td>
         </tr>
         {% endfor %}
