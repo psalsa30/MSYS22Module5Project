@@ -1,0 +1,93 @@
+[P: GIVEN] all Suppliers sorted by country, alphabetically
+[S: DELAVEGAAlthea] Supplier.objects.all().order_by('country')
+
+[P: GIVEN] all black WaterBottles
+[S: DELAVEGAAlthea] WaterBottle.objects.filter(color='Black')
+
+[P: GIVEN] all WaterBottles supplied by Sailfish Inc
+[S: DELAVEGAAlthea] WaterBottle.objects.filter(supplied_by__name='Sailfish, Inc.')
+
+[P: GIVEN] only the name of the supplier from Germany
+[S: DELAVEGAAlthea] Supplier.objects.filter(country='Germany').values('name')
+
+[P: GIVEN] all WaterBottles supplied by EITHER Bucky Inc or Meister Inc
+[S: DELAVEGAAlthea] WaterBottle.objects.filter(supplied_by__name='Bucky, Inc.') | WaterBottle.objects.filter(supplied_by__name='Meister, Inc.')
+
+[P: GIVEN] all WaterBottles with a cost that is NOT 3000 and has a wide mouth
+[S: DELAVEGAAlthea] WaterBottle.objects.filter(mouth_size='Wide Mouth', cost__lt=3000) | WaterBottle.objects.filter(mouth_size='Wide Mouth', cost__gt=3000)
+
+
+[P: QUINTOTaniel] All red WaterBottles
+[S: DELAVEGAAlthea] WaterBottle.objects.filter(color='Red')
+
+[P: QUINTOTaniel] All WaterBottles supplied by Bucky, Inc.
+[S: DELAVEGAAlthea] WaterBottle.objects.filter(supplied_by__name='Bucky, Inc.')
+
+[P: QUINTOTaniel] All WaterBottles with Wide Mouth
+[S: DELAVEGAAlthea] WaterBottle.objects.filter(mouth_size='Wide Mouth')
+
+[P: QUINTOTaniel] All Suppliers from USA
+[S: DELAVEGAAlthea] Supplier.objects.filter(country='USA')
+
+[P: QUINTOTaniel] All WaterBottles that have Oz as the unit of its size
+[S: DELAVEGAAlthea] WaterBottle.objects.filter(size__icontains='Oz')
+
+[P: QUINTOTaniel] All Owala WaterBottles
+[S: DELAVEGAAlthea] WaterBottle.objects.filter(brand='Owala')
+
+[P: QUINTOTaniel] All WaterBottles with current quantity less than 100
+[S: DELAVEGAAlthea] WaterBottle.objects.filter(current_quantity__lt=100)
+
+[P: QUINTOTaniel] All Suppliers sorted by name alphabetically
+[S: DELAVEGAAlthea] Supplier.objects.all().order_by('name')
+
+[P: QUINTOTaniel] All WaterBottles that cost exactly 3500
+[S: DELAVEGAAlthea] WaterBottle.objects.filter(cost=3500)
+
+
+------------------------------------------------------------------------
+
+[P: GIVEN] all WaterBottles
+[S: QUINTOTaniel] WaterBottle.objects.all()
+
+[P: GIVEN] all WaterBottles sorted by brand, alphabetically
+[S: QUINTOTaniel] WaterBottle.objects.all().order_by('Brand')
+
+[P: GIVEN] all white HydroFlask WaterBottles
+[S: QUINTOTaniel] WaterBottle.objects.filter(Brand = 'Hydro Flask', Color = 'White')
+
+[P: GIVEN] all blue WaterBottles supplied by Bucky Inc
+[S: QUINTOTaniel] WaterBottle.objects.filter(Color = 'Blue', Supplied_by__Name = 'Bucky, Inc.')
+
+[P: GIVEN] all WaterBottles that cost 3000 or higher
+[S: QUINTOTaniel] WaterBottle.objects.filter(Cost__gte=3000)
+
+[P: GIVEN] all WaterBottles that have Oz as the unit of its size, sorted by cost from most expensive to least expensive
+[S: QUINTOTaniel] WaterBottle.objects.filter(Size__contains = 'Oz').order_by('-Cost')
+
+[P: DELAVEGAAlthea] All blue WaterBottles
+[S: QUINTOTaniel] WaterBottle.objects.filter(Color='Blue')
+
+[P: DELAVEGAAlthea] All WaterBottles supplied by Manggagawa, Inc.
+[S: QUINTOTaniel] WaterBottle.objects.filter(Supplied_by__Name='Manggagawa, Inc.')
+
+[P: DELAVEGAAlthea] All WaterBottles with Standard Mouth
+[S: QUINTOTaniel] WaterBottle.objects.filter(Mouth_Size='Standard Mouth')
+
+[P: DELAVEGAAlthea] All Suppliers from Philippines
+[S: QUINTOTaniel] Supplier.objects.filter(Country='Philippines')
+
+[P: DELAVEGAAlthea] All WaterBottles that have Liter as the unit of its size
+[S: QUINTOTaniel] WaterBottle.objects.filter(Size__contains='Liter')
+
+[P: DELAVEGAAlthea] All Stanley WaterBottles
+[S: QUINTOTaniel] WaterBottle.objects.filter(Brand='Stanley')
+
+[P: DELAVEGAAlthea] All WaterBottles with current quantity greater than or equal to 100
+[S: QUINTOTaniel] WaterBottle.objects.filter(Current_Quantity__gte=100)
+
+[P: DELAVEGAAlthea] All WaterBottles sorted by cost from least expensive to most expensive
+[S: QUINTOTaniel] WaterBottle.objects.all().order_by('Cost')
+
+[P: DELAVEGAAlthea] All WaterBottles that are NOT supplied by Sailfish, Inc.
+[S: QUINTOTaniel] WaterBottle.objects.exclude(Supplied_by__Name='Sailfish, Inc.')

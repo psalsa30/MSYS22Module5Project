@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{% block title %}MyInventorySystem{% endblock %}</title>
+</head>
+<body>
+ 
+  <nav>
+    <a href="/">MyInventorySystem</a> |
+    <a href="/view_supplier">Suppliers</a> |
+    <a href="/view_bottles">Water Bottles</a> |
+    <a href="/add_bottle">Add Bottle</a>
+  </nav>
+ 
+  <hr>
+ 
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+ 
+  <hr>
+ 
+</body>
+</html>

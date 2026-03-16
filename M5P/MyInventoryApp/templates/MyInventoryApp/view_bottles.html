@@ -1,0 +1,37 @@
+{% extends "MyInventoryApp/base.html" %}
+
+{% block title %}Water Bottles — MyInventorySystem{% endblock %}
+
+{% block content %}
+  <h1>Water Bottles</h1>
+  <a href="/add_bottle">+ Add New Bottle</a>
+
+  {% if bottles %}
+    <table border="1">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Bottle Name</th>
+          <th>Capacity (mL)</th>
+          <th>Price</th>
+          <th>Stock</th>
+          <th>Supplier</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for bottle in bottles %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ bottle.name }}</td>
+          <td>{{ bottle.capacity }}</td>
+          <td>{{ bottle.price }}</td>
+          <td>{{ bottle.stock }}</td>
+          <td>{{ bottle.supplier }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No water bottles found.</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,18 @@
+# Dela Vega, Althea Janika M., 247553
+# QUinto, Nathaniel Josh B., 246329
+# February 16, 2026
+
+"""
+I have not discussed the Python language code with anyone other than my instructor or the teaching
+assistants assigned to this course. I have not used Python language code obtained from another student, or any other unauthorized source, either
+modified or unmodified.
+
+If any Python language code or documentation used in my program was obtained from another source, such as a
+textbook or course notes, that has been clearly noted with a proper citation in the comments of my program.
+"""
+
+from django.contrib import admin
+from .models import Supplier, WaterBottle
+
+admin.site.register(Supplier)
+admin.site.register(WaterBottle)
