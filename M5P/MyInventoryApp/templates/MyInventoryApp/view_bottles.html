@@ -22,11 +22,11 @@
         {% for bottle in bottles %}
         <tr>
           <td>{{ forloop.counter }}</td>
-          <td>{{ bottle.name }}</td>
-          <td>{{ bottle.capacity }}</td>
-          <td>{{ bottle.price }}</td>
-          <td>{{ bottle.stock }}</td>
-          <td>{{ bottle.supplier }}</td>
+          <td>{{ bottle.brand }}</td>
+          <td>{{ bottle.size }}</td>
+          <td>{{ bottle.cost }}</td>
+          <td>{{ bottle.current_quantity }}</td>
+          <td>{{ bottle.supplied_by }}</td>
         </tr>
         {% endfor %}
       </tbody>
