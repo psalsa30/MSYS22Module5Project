@@ -8,21 +8,27 @@
 
 <body class="main-content">
  
-  <nav>
-    <a href="/">MyInventorySystem</a> |
-    <a href="/view_supplier">Suppliers</a> |
-    <a href="/view_bottles">Water Bottles</a> |
-    <a href="/add_bottle">Add Bottle</a>
-  </nav>
- 
-  <hr>
+  <header>
+    <h2>Water Bottle Database</h2>
+    <hr>
+    <nav>
+      <a href="/">Home</a> |
+      <a href="/view_supplier">Suppliers</a> |
+      <a href="/view_bottles">Water Bottles</a> |
+      <a href="/add_bottle">Add Bottle</a>
+    </nav>
+    <hr>
+  </header>
  
   <main>
     {% block content %}
     {% endblock %}
   </main>
  
+  <footer>
   <hr>
- 
+  <p>© 2026 Dela Vega | Guingon | Salvador</p>
+  </footer>
+
 </body>
 </html>
